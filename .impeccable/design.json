@@ -1,0 +1,226 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-10-07T08:40:57Z",
+  "title": "Design System: Lorenzo Arias Portfolio",
+  "extensions": {
+    "colorMeta": {
+      "navy-structural": {
+        "role": "secondary",
+        "displayName": "Structural Navy"
+      },
+      "navy-raised": {
+        "role": "secondary",
+        "displayName": "Raised Navy"
+      },
+      "electric-blue": {
+        "role": "primary",
+        "displayName": "Electric Blue"
+      },
+      "electric-blue-deep": {
+        "role": "primary",
+        "displayName": "Deep Action Blue"
+      },
+      "pale-blue": {
+        "role": "neutral",
+        "displayName": "Pale Blue"
+      },
+      "ink": {
+        "role": "neutral",
+        "displayName": "Ink"
+      },
+      "ink-soft": {
+        "role": "neutral",
+        "displayName": "Soft Ink"
+      },
+      "muted": {
+        "role": "neutral",
+        "displayName": "Muted Text"
+      },
+      "cool-white": {
+        "role": "neutral",
+        "displayName": "Cool White"
+      },
+      "mist": {
+        "role": "neutral",
+        "displayName": "Mist"
+      },
+      "border-line": {
+        "role": "neutral",
+        "displayName": "Border Line"
+      },
+      "status-green": {
+        "role": "status",
+        "displayName": "Availability Green"
+      }
+    },
+    "typographyMeta": {
+      "display": {
+        "displayName": "Hero Display",
+        "purpose": "The main statement in the portfolio hero."
+      },
+      "headline": {
+        "displayName": "Section Headline",
+        "purpose": "Major section headings."
+      },
+      "body": {
+        "displayName": "Body",
+        "purpose": "Paragraphs and general reading text."
+      },
+      "button": {
+        "displayName": "Button",
+        "purpose": "Primary and secondary action labels."
+      },
+      "tag": {
+        "displayName": "Technology Tag",
+        "purpose": "Compact technology tags."
+      }
+    },
+    "shadows": [
+      {
+        "name": "navigation-scrolled",
+        "value": "0 12px 32px rgb(3 18 38 / 18%)",
+        "purpose": "Appears after the sticky masthead has been scrolled."
+      },
+      {
+        "name": "primary-action",
+        "value": "0 8px 18px rgb(14 73 165 / 16%)",
+        "purpose": "Soft default lift for the primary content action."
+      },
+      {
+        "name": "primary-action-hover",
+        "value": "0 12px 25px rgb(14 73 165 / 23%)",
+        "purpose": "Expanded soft shadow on primary-action hover."
+      },
+      {
+        "name": "value-grid",
+        "value": "0 16px 36px rgb(14 39 71 / 9%)",
+        "purpose": "Low-contrast lift under the value-proposition grid; reduced on mobile."
+      },
+      {
+        "name": "case-study",
+        "value": "0 14px 30px rgb(17 42 72 / 5%)",
+        "purpose": "Subtle depth under a case-study panel."
+      },
+      {
+        "name": "portrait-image",
+        "value": "drop-shadow(0 16px 18px rgb(7 27 54 / 9%))",
+        "purpose": "Soft grounding beneath the supplied portrait."
+      }
+    ],
+    "motion": [
+      {
+        "name": "page-reveal",
+        "value": "560ms cubic-bezier(0.16, 1, 0.3, 1)",
+        "purpose": "Opacity and upward translation for elements entering view."
+      },
+      {
+        "name": "impact-count-up",
+        "value": "820ms; ease-out quartic: 1 - (1 - progress)^4",
+        "purpose": "Counts verified impact values to their static targets when observed."
+      },
+      {
+        "name": "reduced-motion",
+        "value": "prefers-reduced-motion: reduce",
+        "purpose": "Keeps reveal targets visible and reduces scrolling, animation, and transition motion."
+      }
+    ],
+    "breakpoints": [
+      {
+        "name": "wide-gutter-adjustment",
+        "value": "1100px"
+      },
+      {
+        "name": "tablet-layout",
+        "value": "900px"
+      },
+      {
+        "name": "mobile-layout",
+        "value": "680px"
+      },
+      {
+        "name": "narrow-mobile-actions",
+        "value": "370px"
+      }
+    ]
+  },
+  "components": [
+    {
+      "name": "Primary Button",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "Primary content action with a deep-blue fill and restrained lift.",
+      "html": "<a class=\"ds-button-primary\" href=\"#work\">View my work</a>",
+      "css": ".ds-button-primary{display:inline-flex;min-height:3.25rem;align-items:center;justify-content:center;gap:.6rem;border:1px solid transparent;border-radius:.35rem;padding:.8rem 1.2rem;color:var(--paper);background:var(--blue-deep);font-family:var(--font-sans);font-size:.92rem;font-weight:750;line-height:1.2;text-decoration:none;transition:transform 200ms ease,background 200ms ease,border-color 200ms ease,color 200ms ease,box-shadow 200ms ease;box-shadow:0 8px 18px rgb(14 73 165 / 16%)}.ds-button-primary:hover{transform:translateY(-2px);background:#0649b4;box-shadow:0 12px 25px rgb(14 73 165 / 23%);text-decoration:none}.ds-button-primary:focus-visible{outline:3px solid #72a9ff;outline-offset:4px}"
+    },
+    {
+      "name": "Secondary Button",
+      "kind": "button",
+      "refersTo": "button-secondary",
+      "description": "Secondary action with a translucent white surface and fine border.",
+      "html": "<a class=\"ds-button-secondary\" href=\"mailto:work@imloreno.com\">Let&apos;s talk</a>",
+      "css": ".ds-button-secondary{display:inline-flex;min-height:3.25rem;align-items:center;justify-content:center;gap:.6rem;border:1px solid #b9cbe0;border-radius:.35rem;padding:.8rem 1.2rem;color:var(--navy);background:rgb(255 255 255 / 72%);font-family:var(--font-sans);font-size:.92rem;font-weight:750;line-height:1.2;text-decoration:none;transition:transform 200ms ease,background 200ms ease,border-color 200ms ease,color 200ms ease,box-shadow 200ms ease}.ds-button-secondary:hover{transform:translateY(-2px);border-color:#8ba9cf;background:#fff;text-decoration:none}.ds-button-secondary:focus-visible{outline:3px solid #72a9ff;outline-offset:4px}"
+    },
+    {
+      "name": "Navigation CTA",
+      "kind": "button",
+      "refersTo": "nav-cta",
+      "description": "Compact contact action in the navy masthead.",
+      "html": "<a class=\"ds-nav-cta\" href=\"mailto:work@imloreno.com\">Let&apos;s talk<svg viewBox=\"0 0 20 20\" fill=\"none\" aria-hidden=\"true\"><path d=\"M5.5 14.5 14 6m0 0H7m7 0v7\" stroke=\"currentColor\" stroke-width=\"1.7\" stroke-linecap=\"round\" stroke-linejoin=\"round\"/></svg></a>",
+      "css": ".ds-nav-cta{display:inline-flex;min-height:2.7rem;align-items:center;justify-content:center;gap:.25rem;border:0;border-radius:.3rem;padding:0 .5rem;color:#fff;background:var(--blue);font-family:var(--font-sans);font-size:.82rem;font-weight:600;text-decoration:none;transition:background 180ms ease,transform 180ms ease;box-shadow:0 1px 2px rgb(2 6 23 / 20%)}.ds-nav-cta svg{width:.75rem;height:.75rem;flex:0 0 auto}.ds-nav-cta:hover{transform:translateY(-1px);background:#2a79ff;text-decoration:none}.ds-nav-cta:focus-visible{outline:2px solid #bae6fd;outline-offset:4px}"
+    },
+    {
+      "name": "Navigation Link",
+      "kind": "nav",
+      "refersTo": "nav-link",
+      "description": "Section link with an understated active underline in the sticky masthead.",
+      "html": "<a class=\"ds-nav-link is-active\" href=\"#work\" aria-current=\"location\">Work</a>",
+      "css": ".ds-nav-link{border-radius:0;border-bottom:1px solid transparent;padding:.25rem 0;color:#d8e4f4;font-family:var(--font-sans);font-size:.875rem;font-weight:500;text-decoration:none;transition:color 180ms ease,border-color 180ms ease}.ds-nav-link:hover,.ds-nav-link.is-active{border-color:#75a9ff;color:#fff}.ds-nav-link:focus-visible{outline:2px solid #7dd3fc;outline-offset:4px}"
+    },
+    {
+      "name": "Value Proposition Card",
+      "kind": "card",
+      "refersTo": "card-value",
+      "description": "White value card with a compact line icon, fine grid border, and soft panel lift.",
+      "html": "<div class=\"ds-value-grid\"><article class=\"ds-value-card\"><span class=\"ds-value-icon\" aria-hidden=\"true\"><svg viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.7\"><circle cx=\"12\" cy=\"12\" r=\"10\"/><circle cx=\"12\" cy=\"12\" r=\"6\"/><circle cx=\"12\" cy=\"12\" r=\"2\"/></svg></span><h2>Product-Focused</h2><p>Think beyond tickets—connecting engineering decisions to user needs, product goals, and measurable business outcomes.</p></article></div>",
+      "css": ".ds-value-grid{display:grid;grid-template-columns:minmax(0,1fr);border:1px solid var(--line);background:var(--paper);box-shadow:0 16px 36px rgb(14 39 71 / 9%)}.ds-value-card{min-height:198px;padding:1.75rem 1.6rem 1.65rem;background:var(--paper)}.ds-value-icon{display:inline-grid;width:2.65rem;height:2.65rem;place-items:center;margin-bottom:.85rem;border-radius:.5rem;color:var(--blue-deep);background:#eaf2ff}.ds-value-icon svg{width:1.3rem;height:1.3rem;stroke-width:1.7}.ds-value-card h2{margin:0;color:var(--ink);font-family:var(--font-sans);font-size:1.05rem;font-weight:780;letter-spacing:-.025em;line-height:1.35}.ds-value-card p{margin:.55rem 0 0;color:var(--muted);font-family:var(--font-sans);font-size:.88rem;line-height:1.65}"
+    },
+    {
+      "name": "Technology Tag",
+      "kind": "chip",
+      "refersTo": "chip-technology",
+      "description": "Pill-shaped technology label with a pale neutral fill and fine border.",
+      "html": "<span class=\"ds-tech-tag\">TypeScript</span>",
+      "css": ".ds-tech-tag{display:inline-block;border:1px solid #d7e1ed;border-radius:999px;padding:.28rem .65rem;color:#33475f;background:#f8fafd;font-family:var(--font-sans);font-size:.72rem;font-weight:650;line-height:1.45}"
+    },
+    {
+      "name": "Impact Measure",
+      "kind": "custom",
+      "refersTo": "impact-measure",
+      "description": "Verified impact figure paired with its measure and organization on navy.",
+      "html": "<div class=\"ds-impact-grid\"><article class=\"ds-impact-item\"><span class=\"ds-impact-value\">60%+</span><span class=\"ds-impact-label\">application performance improvement</span><span class=\"ds-impact-organization\">Raintree</span></article></div>",
+      "css": ".ds-impact-grid{display:grid;grid-template-columns:minmax(0,1fr);border-top:1px solid rgb(255 255 255 / 22%);border-bottom:1px solid rgb(255 255 255 / 22%);color:#fff;background:var(--navy)}.ds-impact-item{min-height:190px;padding:1.5rem clamp(1rem,2vw,2rem) 1.65rem;border-right:1px solid rgb(255 255 255 / 16%)}.ds-impact-item:first-child{padding-left:0}.ds-impact-value{display:block;color:#fff;font-family:var(--font-sans);font-size:clamp(2.6rem,5vw,4.75rem);font-weight:760;font-variant-numeric:tabular-nums;letter-spacing:-.07em;line-height:1.05}.ds-impact-label{display:block;max-width:22ch;margin-top:.8rem;color:#d3dfef;font-family:var(--font-sans);font-size:.91rem;line-height:1.55}.ds-impact-organization{display:block;margin-top:.45rem;color:#8db8f5;font-family:var(--font-sans);font-size:.75rem;font-weight:720;letter-spacing:.06em;text-transform:uppercase}"
+    }
+  ],
+  "narrative": {
+    "northStar": "Engineering Practice Profile",
+    "overview": "The implemented portfolio reads as an engineering consultancy profile: deep navy anchors the masthead and proof/contact planes, while cool-white, mist, and pale-blue surfaces carry the content. Electric blue is assigned to actions and technical emphasis. Self-hosted Manrope, fine dividers, compact stroke-based icons, and broad, low-contrast shadows keep the visual voice crisp and restrained.\n\nThe portrait stage, proof row, overlapping value-card panel, impact grid, and split section headings are expressions of this portfolio, not defaults for unrelated screens. The portrait has a pale-blue backing; its silhouette is not a general-purpose motif.\n\nVisual verification: Browser rendering could not be inspected in this environment. This document records source-defined styles and responsive rules; rendered layout and visual defects remain unverified.",
+    "keyCharacteristics": [
+      "Deep-navy structural planes with cool-white and pale-blue content surfaces.",
+      "Electric blue reserved for actions, proof, and compact technical accents.",
+      "Self-hosted Manrope across display, body, and control text.",
+      "Fine borders, restrained diffuse shadows, and compact line iconography."
+    ],
+    "rules": [],
+    "dos": [
+      "Do preserve the existing navy, electric-blue, cool-white, and pale-blue role assignments.",
+      "Do keep displayed impact values paired with explanatory labels and organization context.",
+      "Do use compact line icons in the existing icon-tile contexts.",
+      "Do keep the portrait stage, value-grid overlap, and split section-heading layout specific to this portfolio rather than treating them as universal templates."
+    ],
+    "donts": [
+      "Don't turn the section descriptor into a global decorative eyebrow/kicker convention; only its current content-grid placement is recorded here.",
+      "Don't treat hard offset shadows as an established style; the extracted implementation uses diffuse shadows.",
+      "Don't infer additional component types or interaction states beyond those implemented."
+    ]
+  }
+}

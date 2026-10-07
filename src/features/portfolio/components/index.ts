@@ -1,0 +1,15 @@
+export { AboutSection } from "./about-section";
+export { ContactSection } from "./contact-section";
+export { EducationSection } from "./education-section";
+export { ExperienceSection } from "./experience-section";
+export { ExpertiseSection } from "./expertise-section";
+export { HeroSection } from "./hero-section";
+export { HowIWorkSection } from "./how-i-work-section";
+export { ImpactSection } from "./impact-section";
+export { MotionEffects } from "./motion-effects";
+export { PortfolioNav } from "./portfolio-nav";
+export { PortfolioPage } from "./portfolio-page";
+export { RemoteCollaborationSection } from "./remote-collaboration-section";
+export { SelectedWorkSection } from "./selected-work-section";
+export { SiteFooter } from "./site-footer";
+export { ValuePropositionsSection } from "./value-propositions-section";
