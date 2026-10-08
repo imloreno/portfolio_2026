@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { ActionLink } from "@/components/ui/action-link";
+import { Container } from "@/components/ui/container";
 import { contactEmail, navigationItems } from "../constants/navigation";
 import { usePortfolioNavigation } from "../hooks/use-portfolio-navigation";
 
@@ -43,7 +44,7 @@ export function PortfolioNav() {
     <header
       className={`sticky top-0 z-50 border-b border-white/10 bg-navy text-white transition-shadow duration-200 motion-reduce:transition-none ${isScrolled ? "shadow-[0_12px_32px_rgb(3_18_38_/_18%)]" : ""}`}
     >
-      <div className="mx-auto flex min-h-[4.5rem] max-w-7xl items-center justify-between gap-2 px-[clamp(1.25rem,5vw,5rem)] max-wide:px-[clamp(1.25rem,4vw,3.5rem)] max-mobile:min-h-[4.15rem] max-mobile:gap-2">
+      <Container className="flex min-h-[4.5rem] items-center justify-between gap-2 max-mobile:min-h-[4.15rem] max-mobile:gap-2">
         <Link
           aria-label="Lorenzo Arias home"
           className="inline-flex min-w-0 shrink-0 items-center gap-2 rounded-sm no-underline focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-sky-300 max-mobile:gap-[0.55rem]"
@@ -57,7 +58,7 @@ export function PortfolioNav() {
           </span>
         </Link>
 
-        <nav aria-label="Primary navigation" className="hidden items-center gap-[clamp(1.1rem,2vw,1.85rem)] lg:flex">
+        <nav aria-label="Primary navigation" className="hidden items-center gap-[clamp(1.1rem,2vw,1.85rem)] lg:ml-[clamp(2rem,3vw,3.5rem)] lg:flex">
           <NavLinks activeSection={activeSection} />
         </nav>
 
@@ -85,7 +86,7 @@ export function PortfolioNav() {
             )}
           </svg>
         </button>
-      </div>
+      </Container>
 
       <div
         className={`border-t border-white/10 bg-navy-raised px-4 pt-3 pb-5 sm:px-6 lg:hidden ${isMenuOpen ? "grid gap-4" : "hidden"}`}

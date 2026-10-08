@@ -23,9 +23,9 @@ export const impactMetrics: readonly ImpactMetric[] = [
     countSuffix: "%+",
   },
   {
-    value: "6+ years",
+    value: "7 years",
     label: "professional experience",
-    countTarget: 6,
+    countTarget: 7,
     countSuffix: "+ years",
   },
 ];

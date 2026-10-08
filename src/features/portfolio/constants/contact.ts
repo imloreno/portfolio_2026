@@ -12,6 +12,6 @@ export const contact = {
 export const footer = {
   name: "Lorenzo Arias",
   title: "Senior Full-Stack Engineer · AI Product Engineering",
-  location: "Santa Cruz, Bolivia (UTC−4)",
+  location: "Santa Cruz, Bolivia (UTC-4)",
   copyright: "© 2026 Lorenzo Arias",
 } as const;

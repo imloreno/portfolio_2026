@@ -7,9 +7,10 @@ export const valuePropositions = [
       "Think beyond tickets—connecting engineering decisions to user needs, product goals, and measurable business outcomes.",
   },
   {
-    title: "End-to-End Ownership",
+    title: "Senior Talent at 20% of US Cost",
     description:
-      "From architecture and APIs to frontend, infrastructure, AI integration, deployment, and production support.",
+      "Same level of expertise, but at a fraction of the cost. Leverage the power of the US market without the overhead.",
+
   },
   {
     title: "AI-Accelerated Engineering",
@@ -17,8 +18,8 @@ export const valuePropositions = [
       "Combine senior engineering fundamentals with modern AI-assisted workflows to prototype, build, and iterate faster.",
   },
   {
-    title: "Built for Remote Collaboration",
+    title: "End-to-End Ownership",
     description:
-      "Based in UTC−4 with strong US working-hour overlap and professional English for distributed collaboration.",
+      "From architecture and APIs to frontend, infrastructure, AI integration, deployment, and production support.",
   },
 ] as const satisfies readonly ValueProposition[];

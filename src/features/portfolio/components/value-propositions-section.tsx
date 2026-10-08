@@ -1,4 +1,4 @@
-import { FiGlobe, FiLayers, FiTarget, FiZap } from "react-icons/fi";
+import { FiDollarSign, FiLayers, FiTarget, FiZap } from "react-icons/fi";
 import type { IconType } from "react-icons";
 import type { HTMLAttributes } from "react";
 import { Container } from "@/components/ui/container";
@@ -6,7 +6,7 @@ import { IconTile } from "@/components/ui/icon-tile";
 import { valuePropositions } from "../constants/value-propositions";
 import { cn } from "@/utils/cn";
 
-const icons: readonly IconType[] = [FiTarget, FiLayers, FiZap, FiGlobe];
+const icons: readonly IconType[] = [FiTarget, FiDollarSign, FiZap, FiLayers];
 
 function ValueCard({
   title,
