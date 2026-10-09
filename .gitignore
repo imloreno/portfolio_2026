@@ -46,3 +46,7 @@ next-env.d.ts
 .impeccable/mocks/
 .impeccable/build/
 .impeccable/review/
+/dist/
+.vinext/
+.cloudflare/
+.wrangler/
