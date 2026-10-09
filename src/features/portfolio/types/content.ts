@@ -43,6 +43,7 @@ export interface ExperienceRole {
   organization: string;
   title: string;
   period: string;
+  startDate?: string;
   location: string;
   highlights: readonly string[];
   technologies?: readonly string[];

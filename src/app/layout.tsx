@@ -1,84 +1,89 @@
-import type { Metadata } from "next";
-import { contact } from "@/features/portfolio/constants/contact";
-import { portfolioProfile, profileSettings } from "@/features/portfolio/constants/profile";
+import type { Metadata, Viewport } from "next";
+import { profileSettings } from "@/features/portfolio/constants/profile";
+import { structuredData } from "@/features/portfolio/structured-data";
 import "./globals.css";
 
-const description =
-  "Senior Full-Stack Engineer based in Bolivia, working remotely with US teams. Building scalable web platforms and AI-powered products with Node.js, Python, TypeScript, React, AWS and LLM technologies.";
+const title = "Lorenzo Arias — Senior Full-Stack Engineer | AI Product Engineering";
+const ogAlt = "Lorenzo Arias, Senior Full-Stack Engineer focused on AI Product Engineering";
 
 export const metadata: Metadata = {
   metadataBase: new URL(profileSettings.siteUrl),
-  title: "Lorenzo Arias — Senior Full-Stack Engineer | AI Product Engineering",
-  description,
+  title: {
+    default: title,
+    template: "%s | Lorenzo Arias",
+  },
+  description: profileSettings.description,
   applicationName: "Lorenzo Arias Portfolio",
-  icons: { icon: "/icon.webp" },
+  authors: [{ name: profileSettings.name, url: profileSettings.siteUrl }],
+  creator: profileSettings.name,
+  publisher: profileSettings.name,
+  category: "technology",
   alternates: { canonical: "/" },
+  icons: {
+    icon: [
+      { url: "/favicon.ico", sizes: "any" },
+      { url: "/icon-192.png", type: "image/png", sizes: "192x192" },
+      { url: "/icon-512.png", type: "image/png", sizes: "512x512" },
+    ],
+    shortcut: "/favicon.ico",
+    apple: [{ url: "/apple-touch-icon.png", sizes: "180x180", type: "image/png" }],
+  },
+  manifest: "/site.webmanifest",
+  appleWebApp: {
+    capable: true,
+    title: "Lorenzo Arias",
+    statusBarStyle: "default",
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+      "max-video-preview": -1,
+    },
+  },
   openGraph: {
     type: "website",
     url: "/",
     siteName: "Lorenzo Arias",
-    title: "Lorenzo Arias — Senior Full-Stack Engineer | AI Product Engineering",
-    description,
-    images: [
-      {
-        url: profileSettings.portraitUrl,
-        width: 1254,
-        height: 1254,
-        alt: "Lorenzo Arias, Senior Full-Stack Engineer based in Bolivia",
-      },
-    ],
+    locale: "en_US",
+    title,
+    description: profileSettings.description,
+    images: [{ url: "/og.webp", width: 1200, height: 630, alt: ogAlt }],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Lorenzo Arias — Senior Full-Stack Engineer | AI Product Engineering",
-    description,
-    images: [profileSettings.portraitUrl],
+    title,
+    description: profileSettings.description,
+    images: [{ url: "/og.webp", alt: ogAlt }],
   },
-  robots: { index: true, follow: true },
+};
+
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+  themeColor: "#071b36",
+  colorScheme: "light",
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
-  const personSchema = {
-    "@context": "https://schema.org",
-    "@type": "Person",
-    name: portfolioProfile.name,
-    url: profileSettings.siteUrl,
-    jobTitle: "Senior Full-Stack Engineer",
-    description,
-    email: `mailto:${contact.email}`,
-    image: `${profileSettings.siteUrl}${profileSettings.portraitUrl}`,
-    sameAs: [profileSettings.linkedinUrl],
-    knowsAbout: [
-      "Full-stack engineering",
-      "AI product engineering",
-      "Large language models",
-      "Node.js",
-      "Python",
-      "TypeScript",
-      "React",
-      "AWS",
-      "Software architecture",
-      "Production engineering",
-    ],
-    knowsLanguage: ["English", "Spanish"],
-    homeLocation: {
-      "@type": "Place",
-      name: `${portfolioProfile.location.city}, ${portfolioProfile.location.country}`,
-      address: {
-        "@type": "PostalAddress",
-        addressLocality: portfolioProfile.location.city,
-        addressCountry: "BO",
-      },
-    },
-  };
-
   return (
     <html className="scroll-smooth scroll-pt-[5.5rem] motion-reduce:scroll-auto max-mobile:scroll-pt-[4.8rem]" lang="en">
+      <link
+        as="font"
+        crossOrigin="anonymous"
+        href="/fonts/manrope-latin.woff2"
+        rel="preload"
+        type="font/woff2"
+      />
       <body className="m-0 bg-white font-sans text-base leading-[1.65] text-ink antialiased">
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
-            __html: JSON.stringify(personSchema).replace(/</g, "\\u003c"),
+            __html: JSON.stringify(structuredData).replace(/</g, "\\u003c"),
           }}
         />
         {children}

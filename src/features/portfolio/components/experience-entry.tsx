@@ -4,7 +4,7 @@ import type { ExperienceRole } from "../types/content";
 export function ExperienceEntry({ role, featured }: { role: ExperienceRole; featured: boolean }) {
   return (
     <li className="relative grid grid-cols-[10.2rem_minmax(0,1fr)] gap-8 before:absolute before:top-[1.6rem] before:left-[10.78rem] before:size-[0.65rem] before:rounded-full before:border-2 before:border-mist before:bg-blue before:shadow-[0_0_0_1px_var(--color-blue)] before:content-[''] max-tablet:grid-cols-[8.8rem_minmax(0,1fr)] max-tablet:gap-7 max-tablet:before:left-[9.38rem] max-mobile:block max-mobile:pl-5 max-mobile:before:top-3 max-mobile:before:left-[-0.05rem]" data-reveal>
-      <time className="pt-[1.35rem] text-right text-[0.78rem] leading-[1.5] font-[750] text-muted tabular-nums max-mobile:pt-0.5 max-mobile:text-left max-mobile:text-[0.7rem]">
+      <time className="pt-[1.35rem] text-right text-[0.78rem] leading-[1.5] font-[750] text-muted tabular-nums max-mobile:pt-0.5 max-mobile:text-left max-mobile:text-[0.7rem]" dateTime={role.startDate}>
         {role.period}
       </time>
       <article className={featured

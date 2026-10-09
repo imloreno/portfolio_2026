@@ -5,6 +5,7 @@ export const experience: readonly ExperienceRole[] = [
     organization: "Raintree",
     title: "Senior AI Engineer",
     period: "May 2025–Present",
+    startDate: "2025-05",
     location: "Arizona, US",
     highlights: [
       "Built serverless microservices and an AI chatbot that acts on orders in natural language.",
@@ -17,6 +18,7 @@ export const experience: readonly ExperienceRole[] = [
     organization: "NICE",
     title: "Senior Full-Stack Engineer",
     period: "June 2022–June 2024",
+    startDate: "2022-06",
     location: "New Jersey, US",
     highlights: [
       "Built a reporting dashboard service and improved reporting performance by 40%.",
@@ -29,6 +31,7 @@ export const experience: readonly ExperienceRole[] = [
     organization: "COSMON",
     title: "Full-Stack Engineer",
     period: "June–November 2021",
+    startDate: "2021-06",
     location: "Bolivia",
     highlights: [
       "Worked on core architecture and dynamic visualizations for a production web platform.",
@@ -40,6 +43,7 @@ export const experience: readonly ExperienceRole[] = [
     organization: "Tucandera Tours",
     title: "Full-Stack Engineer",
     period: "February 2020–May 2021",
+    startDate: "2020-02",
     location: "Bolivia",
     highlights: [
       "Transformed a static website into a Next.js platform with improved SEO and navigation.",
@@ -50,6 +54,7 @@ export const experience: readonly ExperienceRole[] = [
     organization: "Gourmand",
     title: "Full-Stack Engineer",
     period: "July–December 2019",
+    startDate: "2019-07",
     location: "Bolivia",
     highlights: [
       "Built backend infrastructure and a responsive frontend for customer and company needs.",

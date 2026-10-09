@@ -28,9 +28,9 @@ function ValueCard({
       <IconTile className={cn("mb-3.5 max-mobile:mb-2.5 max-mobile:size-[2.2rem] [&_svg]:max-mobile:size-[1.1rem]", icon.tile)} variant="value">
         <Icon icon={icon.Glyph} size="lg" />
       </IconTile>
-      <h2 className="text-[1.05rem] leading-[1.35] font-[780] tracking-[-0.025em] text-ink max-mobile:text-[0.91rem]">
+      <h3 className="text-[1.05rem] leading-[1.35] font-[780] tracking-[-0.025em] text-ink max-mobile:text-[0.91rem]">
         {title}
-      </h2>
+      </h3>
       <p className="mt-2 text-[0.88rem] leading-[1.65] text-muted max-mobile:mt-1 max-mobile:text-[0.78rem] max-mobile:leading-[1.55]">
         {description}
       </p>

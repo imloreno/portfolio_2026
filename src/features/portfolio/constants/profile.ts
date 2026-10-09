@@ -26,12 +26,19 @@ export const remoteWorkFacts = {
   languages: portfolioProfile.languages,
 } as const;
 
+// Single source of truth for the canonical site URL. Override at build time with
+// NEXT_PUBLIC_SITE_URL (e.g. the Cloudflare Workers URL) when the custom domain
+// is not yet attached. Trailing slashes are stripped.
+const siteUrl = (
+  process.env.NEXT_PUBLIC_SITE_URL ?? "https://imloreno.com"
+).replace(/\/+$/, "");
+
 export const profileSettings = {
-  siteUrl: "https://imloreno.com",
+  siteUrl,
   name: "Lorenzo Arias",
   title: "Senior Full-Stack Engineer | AI Product Engineering",
   description:
-    "Lorenzo Arias is a Senior Full-Stack Engineer focused on AI Product Engineering, based in Santa Cruz, Bolivia and open to US-remote roles.",
+    "Senior Full-Stack Engineer based in Bolivia, working remotely with US teams. Building scalable web platforms and AI-powered products with Node.js, Python, TypeScript, React, AWS and LLM technologies.",
   portraitUrl: "/lorenzo.webp",
   email: "work@imloreno.com",
   linkedinUrl: "https://linkedin.com/in/soylorenzo",

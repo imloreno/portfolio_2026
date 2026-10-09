@@ -50,7 +50,7 @@ export function HeroSection() {
           alt=""
           className="object-cover object-center blur-[5px]"
           fill
-          preload
+          loading="eager"
           sizes="100vw"
           src="/bg2.webp"
         />

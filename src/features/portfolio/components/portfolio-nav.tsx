@@ -55,6 +55,7 @@ export function PortfolioNav() {
             alt="Lorenzo Arias logo"
             className="size-10 shrink-0 rounded-[0.35rem] shadow-[0_5px_14px_rgb(0_0_0_/_16%)] max-mobile:size-[2.1rem] border border-2 border-blue-deep"
             height={80}
+            sizes="40px"
             src="/icon.webp"
             width={80}
           />
