@@ -3,7 +3,7 @@ import type { CaseStudy } from "../types/content";
 export const caseStudies = [
   {
     id: "ai-powered-order-assistant",
-    title: "AI-Powered Order Assistant",
+    title: "AI-Powered Medical Assistant",
     organization: "Raintree",
     category: "AI / Full-Stack / AWS",
     description:
@@ -15,7 +15,7 @@ export const caseStudies = [
     },
     work: [
       "Implemented natural-language order actions with LLM and RAG integration.",
-      "Built Python and Node.js services using AWS serverless infrastructure.",
+      "Built Python and Node.js services using AWS infrastructure.",
       "Worked with DynamoDB and PostgreSQL, integrating the workflow with the React and TypeScript app.",
     ],
     impact: "Shipped a production AI workflow and broader modernization.",
@@ -30,7 +30,7 @@ export const caseStudies = [
     organization: "NICE",
     category: "Full-Stack / Performance / Product Ownership",
     description:
-      "Owned dashboard and reporting capabilities across frontend modernization, performance, and production support.",
+      "Owned dashboard and reporting capabilities across software modernization, performance, and production support.",
     challenge: "Improve reporting and frontend performance without disrupting production.",
     role: {
       title: "Senior Full-Stack Engineer",
