@@ -26,7 +26,7 @@ function CaseDetail({
 
 export function CaseStudyCard({ study, reverse }: { study: CaseStudy; reverse: boolean }) {
   return (
-    <article className="grid grid-cols-[minmax(0,0.94fr)_minmax(0,1.06fr)] overflow-hidden border border-[#dce4ed] bg-white shadow-[0_14px_30px_rgb(17_42_72_/_5%)] max-tablet:grid-cols-1" data-reveal>
+    <article className="grid grid-cols-[minmax(0,0.94fr)_minmax(0,1.06fr)] overflow-hidden border border-line bg-white shadow-[0_14px_30px_rgb(17_42_72_/_5%)] max-tablet:grid-cols-1" data-reveal>
       <div className={`flex min-w-0 flex-col p-[clamp(1.6rem,3.5vw,3.2rem)] max-wide:p-7 max-tablet:p-7 max-mobile:px-5 max-mobile:pt-5 max-mobile:pb-6 ${reverse ? "tablet:order-2" : ""}`}>
         <div className="flex flex-wrap items-center gap-x-3 gap-y-2 text-[0.73rem] leading-[1.5] font-extrabold tracking-[0.08em] text-blue-deep uppercase max-mobile:text-[0.64rem]">
           <span>{study.organization}</span>
@@ -37,7 +37,7 @@ export function CaseStudyCard({ study, reverse }: { study: CaseStudy; reverse: b
         <h3 className="mt-3 max-w-[18ch] text-[clamp(1.6rem,2.4vw,2.35rem)] leading-[1.12] font-[760] tracking-[-0.045em] text-ink text-balance max-mobile:text-[1.65rem]">
           {study.title}
         </h3>
-        <p className="mt-3 max-w-[62ch] text-[0.98rem] leading-[1.75] text-[#485a70] max-mobile:text-[0.89rem]">
+        <p className="mt-3 max-w-[62ch] text-[0.98rem] leading-[1.75] text-muted max-mobile:text-[0.89rem]">
           {study.description}
         </p>
         <CaseDetail title="Challenge">{study.challenge}</CaseDetail>

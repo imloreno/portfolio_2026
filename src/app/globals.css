@@ -31,9 +31,20 @@
   --color-navy-raised: #0c2a50;
   --color-blue: #1769f5;
   --color-blue-deep: #0754ce;
+  --color-blue-dark: #0649b4;
+  --color-blue-bright: #2a79ff;
   --color-blue-pale: #eaf3ff;
   --color-line: #dbe3ec;
   --color-mist: #f4f7fb;
+  --color-success: #16864f;
+  --color-accent-amber: #b7791f;
+  --color-accent-violet: #6d4fc2;
+  --color-focus: #72a9ff;
+  --color-ice: #d5e3f5;
+  --color-ice-dim: #8fa9cc;
+  --color-navy-deep: #04152b;
+  --color-surface: #f8fafd;
+  --color-surface-deep: #e9f1f9;
   --breakpoint-narrow: 371px;
   --breakpoint-mobile: 681px;
   --breakpoint-tablet: 901px;
@@ -52,12 +63,12 @@
   }
 
   ::selection {
-    color: #fff;
-    background: #0754ce;
+    color: white;
+    background: var(--color-blue-deep);
   }
 
   :focus-visible {
-    outline: 3px solid #72a9ff;
+    outline: 3px solid var(--color-focus);
     outline-offset: 4px;
   }
 
@@ -80,16 +91,16 @@
   }
 
   ::-webkit-scrollbar-track {
-    background: #edf2f8;
+    background: var(--color-mist);
   }
 
   ::-webkit-scrollbar-thumb {
-    border: 2px solid #edf2f8;
+    border: 2px solid var(--color-mist);
     border-radius: 1rem;
-    background: #8ea4bd;
+    background: var(--color-ice-dim);
   }
 
   ::-webkit-scrollbar-thumb:hover {
-    background: #5e7897;
+    background: var(--color-muted);
   }
 }

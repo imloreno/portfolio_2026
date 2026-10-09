@@ -1,4 +1,5 @@
 import { FiCheckCircle } from "react-icons/fi";
+import { Icon } from "@/components/ui/icon-tile";
 import { Container } from "@/components/ui/container";
 import { Section } from "@/components/ui/section";
 import { remoteWorkFacts } from "../constants/profile";
@@ -22,7 +23,7 @@ export function RemoteCollaborationSection() {
               Based in LATAM. Built to work with US teams.
             </h2>
           </header>
-          <p className="max-w-[57ch] text-[0.98rem] leading-[1.8] text-[#42566e] max-mobile:mt-4 max-mobile:text-[0.9rem]">
+          <p className="max-w-[57ch] text-[0.98rem] leading-[1.8] text-muted max-mobile:mt-4 max-mobile:text-[0.9rem]">
             I&apos;m based in {remoteWorkFacts.location} ({remoteWorkFacts.timeZone}),
             giving me substantial working-hour overlap with teams across the United
             States. I&apos;ve already worked with US-based companies and am comfortable
@@ -30,24 +31,24 @@ export function RemoteCollaborationSection() {
             ownership, and autonomy matter.
           </p>
         </div>
-        <div className="grid grid-cols-3 border-y border-[#c2d4e9] max-mobile:grid-cols-1">
+        <div className="grid grid-cols-3 border-y border-line max-mobile:grid-cols-1">
           {facts.map((fact, index) => (
             <div
-              className={`min-h-[150px] border-r border-[#c2d4e9] px-[clamp(1rem,2vw,2rem)] py-6 first:pl-0 last:border-r-0 max-mobile:min-h-0 max-mobile:border-r-0 max-mobile:border-b max-mobile:px-0 max-mobile:py-4 max-mobile:last:border-b-0 ${index === 0 ? "max-mobile:pt-4" : ""}`}
+              className={`min-h-[150px] border-r border-line px-[clamp(1rem,2vw,2rem)] py-6 first:pl-0 last:border-r-0 max-mobile:min-h-0 max-mobile:border-r-0 max-mobile:border-b max-mobile:px-0 max-mobile:py-4 max-mobile:last:border-b-0 ${index === 0 ? "max-mobile:pt-4" : ""}`}
               data-reveal
               key={fact.value}
             >
               <strong className="block text-[clamp(1.65rem,3vw,2.5rem)] leading-[1.2] font-[780] tracking-[-0.055em] text-navy max-mobile:text-[1.65rem]">
                 {fact.value}
               </strong>
-              <span className="mt-2 block text-[0.85rem] leading-[1.5] text-[#4b6078] max-mobile:text-[0.81rem]">
+              <span className="mt-2 block text-[0.85rem] leading-[1.5] text-muted max-mobile:text-[0.81rem]">
                 {fact.detail}
               </span>
             </div>
           ))}
         </div>
-        <p className="mt-6 flex max-w-[78ch] items-start gap-3 text-[0.9rem] leading-[1.7] text-[#40566f] max-mobile:text-[0.82rem]">
-          <FiCheckCircle className="mt-0.5 size-5 shrink-0 text-blue-deep" aria-hidden="true" />
+        <p className="mt-6 flex max-w-[78ch] items-start gap-3 text-[0.9rem] leading-[1.7] text-muted max-mobile:text-[0.82rem]">
+          <Icon icon={FiCheckCircle} size="md" tone="deep" className="mt-0.5" />
           <span>{remoteWorkFacts.availability}. {remoteWorkFacts.distributedTeams}.</span>
         </p>
       </Container>

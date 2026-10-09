@@ -1,14 +1,15 @@
 import Image from "next/image";
-import { FiArrowUpRight } from "react-icons/fi";
+import { FiArrowUpRight, FiClock, FiMapPin, FiMessageCircle, FiUsers } from "react-icons/fi";
 import { ActionLink } from "@/components/ui/action-link";
 import { Container } from "@/components/ui/container";
+import { Icon } from "@/components/ui/icon-tile";
 import { portfolioProfile, profileSettings } from "../constants/profile";
 
 const facts = [
-  { title: "US timezone", detail: "Strong US time-zone overlap (UTC-4)" },
-  { title: "English C1", detail: "Professional working proficiency" },
-  { title: "US teams", detail: "Experience with US-based companies" },
-  { title: "Remote, Bolivia", detail: "Based in LATAM working remotely" },
+  { title: "US timezone", detail: "Strong US time-zone overlap (UTC-4)", icon: FiClock },
+  { title: "English C1", detail: "Professional working proficiency", icon: FiMessageCircle },
+  { title: "US teams", detail: "Experience with US-based companies", icon: FiUsers },
+  { title: "Remote, Bolivia", detail: "Based in LATAM working remotely", icon: FiMapPin },
 ] as const;
 
 function HeroFacts() {
@@ -19,13 +20,16 @@ function HeroFacts() {
     >
       {facts.map((fact) => (
         <div
-          className="flex min-h-11 flex-col justify-center gap-px rounded-[0.45rem] border border-[#d3e1f2] bg-white/80 px-4 py-2.5 shadow-[0_2px_12px_rgb(7_27_54_/_5%)] backdrop-blur-sm max-mobile:min-h-[3.35rem] max-mobile:px-3 max-mobile:py-2"
+          className="flex min-h-11 flex-col justify-center gap-px rounded-[0.45rem] border border-line bg-white/80 px-4 py-2.5 shadow-[0_2px_12px_rgb(7_27_54_/_5%)] backdrop-blur-sm max-mobile:min-h-[3.35rem] max-mobile:px-3 max-mobile:py-2"
           key={fact.title}
         >
-          <strong className="text-[0.92rem] font-[780] text-blue-deep max-mobile:text-[0.86rem]">
-            {fact.title}
-          </strong>
-          <span className="text-[0.76rem] leading-[1.4] text-[#53667c] max-mobile:text-[0.7rem]">
+          <span className="flex items-center gap-2">
+            <Icon icon={fact.icon} size="sm" className="text-blue-deep [stroke-width:2.5]" />
+            <strong className="text-[0.92rem] font-[780] text-blue-deep max-mobile:text-[0.86rem]">
+              {fact.title}
+            </strong>
+          </span>
+          <span className="text-[0.76rem] leading-[1.4] text-muted max-mobile:text-[0.7rem]">
             {fact.detail}
           </span>
         </div>
@@ -53,7 +57,7 @@ export function HeroSection() {
       </div>
       <div
         aria-hidden="true"
-        className="absolute inset-0 bg-gradient-to-r from-[#f4f8fe] via-[#eaf3ff]/90 to-[#eaf3ff]/45 max-mobile:bg-gradient-to-b max-mobile:from-[#f4f8fe] max-mobile:via-[#eaf3ff]/90 max-mobile:to-[#eaf3ff]/60"
+        className="absolute inset-0 bg-gradient-to-r from-surface via-blue-pale/90 to-blue-pale/45 max-mobile:bg-gradient-to-b max-mobile:from-surface max-mobile:via-blue-pale/90 max-mobile:to-blue-pale/60"
       />
       <Container
         className="relative grid min-h-[clamp(650px,calc(100svh-4.5rem),790px)] grid-cols-[minmax(0,1.2fr)_minmax(340px,0.8fr)] grid-rows-[minmax(0,1fr)_auto] items-center gap-x-[clamp(1.5rem,4vw,4.75rem)] py-[clamp(3.5rem,7vh,6rem)] pb-8 max-wide:grid-cols-[minmax(0,1fr)_minmax(300px,0.85fr)] max-wide:gap-x-0 max-wide:[&_h1]:text-[clamp(3.15rem,6vw,4.7rem)] max-tablet:flex max-tablet:flex-col max-tablet:items-stretch max-tablet:gap-0 max-tablet:min-h-0 max-tablet:pt-8 max-tablet:[&_h1]:text-[clamp(3rem,6vw,4.2rem)] max-mobile:py-2 max-mobile:pb-3"
@@ -69,14 +73,14 @@ export function HeroSection() {
           <p className="mt-[1.35rem] text-[clamp(0.95rem,1.2vw,1.08rem)] font-[750] tracking-[-0.025em] text-ink-soft max-mobile:mt-[1.1rem] max-mobile:text-[0.9rem]">
             {portfolioProfile.title}
           </p>
-          <p className="mt-3 max-w-[58ch] text-[clamp(1rem,1.25vw,1.13rem)] leading-[1.8] text-[#465a70] max-mobile:mt-2 max-mobile:text-[0.95rem] max-mobile:leading-[1.7]">
+          <p className="mt-3 max-w-[58ch] text-[clamp(1rem,1.25vw,1.13rem)] leading-[1.8] text-muted max-mobile:mt-2 max-mobile:text-[0.95rem] max-mobile:leading-[1.7]">
             I build and ship scalable web platforms and AI-powered products using
             Node.js, Python, TypeScript, React, AWS, and modern LLM technologies.
             Based in Bolivia, working remotely with US teams.
           </p>
           <div className="mt-[1.8rem] flex flex-wrap items-center gap-3 max-mobile:mt-[1.35rem] max-mobile:gap-2">
             <ActionLink className="max-narrow:w-full" href="#work">
-              View my work <FiArrowUpRight aria-hidden="true" className="size-[1.05rem]" />
+              View my work <Icon icon={FiArrowUpRight} className="size-[1.05rem]" />
             </ActionLink>
             <ActionLink
               className="max-narrow:w-full"
@@ -86,8 +90,8 @@ export function HeroSection() {
               Let&apos;s talk
             </ActionLink>
           </div>
-          <p className="mt-6 inline-flex items-center gap-2.5 text-[0.88rem] font-bold text-[#183b2d] max-mobile:mt-4 max-mobile:text-[0.81rem]">
-            <span className="relative size-[0.56rem] shrink-0 rounded-full bg-[#16864f] shadow-[0_0_0_4px_rgb(22_134_79_/_13%)]" />
+          <p className="mt-6 inline-flex items-center gap-2.5 text-[0.88rem] font-bold text-success max-mobile:mt-4 max-mobile:text-[0.81rem]">
+            <span className="relative size-[0.56rem] shrink-0 rounded-full bg-success shadow-[0_0_0_4px_rgb(22_134_79_/_13%)]" />
             Open to US-based remote opportunities
           </p>
         </div>

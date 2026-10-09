@@ -11,9 +11,9 @@ const toneVariants = {
   white: "bg-white",
   mist: "bg-mist",
   pale: "bg-blue-pale",
-  work: "bg-[#f5f8fc]",
-  timeline: "bg-[#edf4fc]",
-  remote: "bg-[#e9f2ff]",
+  work: "bg-surface",
+  timeline: "bg-surface-deep",
+  remote: "bg-blue-pale",
   navy: "bg-navy text-white",
 } as const;
 

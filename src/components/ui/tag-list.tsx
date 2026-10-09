@@ -2,9 +2,9 @@ import { cn } from "@/utils/cn";
 
 const variants = {
   technology:
-    "rounded-full border-[#d7e1ed] bg-[#f8fafd] px-[0.65rem] py-[0.28rem] text-[#33475f]",
+    "rounded-full border-line bg-surface px-[0.65rem] py-[0.28rem] text-ink-soft",
   capability:
-    "rounded border-[#dce5ee] bg-[#fbfcfe] px-[0.65rem] py-[0.35rem] text-[#354960]",
+    "rounded border-line bg-surface px-[0.65rem] py-[0.35rem] text-ink-soft",
 } as const;
 
 interface TagListProps {

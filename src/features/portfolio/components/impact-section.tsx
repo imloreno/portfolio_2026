@@ -20,11 +20,11 @@ function ImpactMetric({
       >
         {value}
       </span>
-      <span className="mt-3 block max-w-[22ch] text-[0.91rem] leading-[1.55] text-[#d3dfef] max-mobile:mt-2 max-mobile:text-[0.79rem]">
+      <span className="mt-3 block max-w-[22ch] text-[0.91rem] leading-[1.55] text-ice max-mobile:mt-2 max-mobile:text-[0.79rem]">
         {label}
       </span>
       {organization ? (
-        <span className="mt-2 block text-[0.75rem] font-[720] tracking-[0.06em] text-[#8db8f5] uppercase max-mobile:text-[0.65rem]">
+        <span className="mt-2 block text-[0.75rem] font-[720] tracking-[0.06em] text-ice-dim uppercase max-mobile:text-[0.65rem]">
           {organization}
         </span>
       ) : null}

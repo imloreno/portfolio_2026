@@ -10,21 +10,21 @@ function EngineeringLoop() {
       className="relative flex min-h-[395px] flex-col justify-between overflow-hidden bg-navy p-[clamp(1.5rem,3vw,2.5rem)] text-white after:pointer-events-none after:absolute after:right-[-3.8rem] after:bottom-[-5.2rem] after:size-64 after:rounded-full after:border after:border-white/15 after:shadow-[0_0_0_2.2rem_rgb(255_255_255_/_3%),0_0_0_4.4rem_rgb(255_255_255_/_2%)] after:content-[''] max-mobile:min-h-[300px] max-mobile:p-5"
       data-reveal
     >
-      <p className="relative z-10 text-[0.73rem] font-extrabold tracking-[0.13em] text-[#a7c8f4] uppercase">
+      <p className="relative z-10 text-[0.73rem] font-extrabold tracking-[0.13em] text-ice-dim uppercase">
         A practical engineering loop
       </p>
       <div aria-hidden="true" className="relative z-10 my-8 grid gap-2">
         <span className="w-fit max-w-full border-b border-white/20 py-2 text-[clamp(1.4rem,3vw,2.15rem)] leading-[1.2] font-[720] tracking-[-0.045em] max-mobile:text-[1.55rem]">
           Understand the problem
         </span>
-        <span className="w-fit max-w-full border-b border-white/20 py-2 pl-5 text-[clamp(1.4rem,3vw,2.15rem)] leading-[1.2] font-[720] tracking-[-0.045em] text-[#dbe8f8] max-mobile:text-[1.55rem]">
+        <span className="w-fit max-w-full border-b border-white/20 py-2 pl-5 text-[clamp(1.4rem,3vw,2.15rem)] leading-[1.2] font-[720] tracking-[-0.045em] text-ice max-mobile:text-[1.55rem]">
           Design &amp; build
         </span>
-        <span className="w-fit max-w-full border-b border-white/20 py-2 pl-10 text-[clamp(1.4rem,3vw,2.15rem)] leading-[1.2] font-[720] tracking-[-0.045em] text-[#9fc5ff] max-mobile:text-[1.55rem]">
+        <span className="w-fit max-w-full border-b border-white/20 py-2 pl-10 text-[clamp(1.4rem,3vw,2.15rem)] leading-[1.2] font-[720] tracking-[-0.045em] text-ice-dim max-mobile:text-[1.55rem]">
           Ship. Learn. Improve.
         </span>
       </div>
-      <p className="relative z-10 text-[0.88rem] text-[#d3dfed]">
+      <p className="relative z-10 text-[0.88rem] text-ice">
         Product context first. Reliable software in production.
       </p>
     </aside>
@@ -45,7 +45,7 @@ export function AboutSection() {
           />
           <div className="grid max-w-[68ch] gap-4">
             {about.paragraphs.map((paragraph) => (
-              <p className="text-[0.98rem] leading-[1.85] text-[#485a70] max-mobile:text-[0.9rem]" key={paragraph}>
+              <p className="text-[0.98rem] leading-[1.85] text-muted max-mobile:text-[0.9rem]" key={paragraph}>
                 {paragraph}
               </p>
             ))}

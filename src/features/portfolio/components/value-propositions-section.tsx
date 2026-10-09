@@ -2,26 +2,31 @@ import { FiDollarSign, FiLayers, FiTarget, FiZap } from "react-icons/fi";
 import type { IconType } from "react-icons";
 import type { HTMLAttributes } from "react";
 import { Container } from "@/components/ui/container";
-import { IconTile } from "@/components/ui/icon-tile";
+import { Icon, IconTile } from "@/components/ui/icon-tile";
 import { valuePropositions } from "../constants/value-propositions";
 import { cn } from "@/utils/cn";
 
-const icons: readonly IconType[] = [FiTarget, FiDollarSign, FiZap, FiLayers];
+const icons = [
+  { Glyph: FiTarget, tile: "bg-blue-pale text-blue-deep" },
+  { Glyph: FiDollarSign, tile: "bg-success/10 text-success" },
+  { Glyph: FiZap, tile: "bg-accent-amber/10 text-accent-amber" },
+  { Glyph: FiLayers, tile: "bg-accent-violet/10 text-accent-violet" },
+] as const;
 
 function ValueCard({
   title,
   description,
-  Icon,
+  icon,
   className,
 }: {
   title: string;
   description: string;
-  Icon: IconType;
+  icon: { Glyph: IconType; tile: string };
 } & Pick<HTMLAttributes<HTMLElement>, "className">) {
   return (
     <article className={cn("min-h-[198px] border-r border-line pt-[2rem] px-[1.6rem] pb-[1.9rem] max-wide:px-[1.2rem] max-tablet:nth-[2n]:border-r-0 max-tablet:nth-[-n+2]:border-b max-mobile:min-h-0 max-mobile:px-[0.95rem] max-mobile:pt-[1.3rem] max-mobile:pb-[1.35rem]", className)} data-reveal>
-      <IconTile className="mb-3.5 max-mobile:mb-2.5 max-mobile:size-[2.2rem] [&_svg]:max-mobile:size-[1.1rem]" variant="value">
-        <Icon />
+      <IconTile className={cn("mb-3.5 max-mobile:mb-2.5 max-mobile:size-[2.2rem] [&_svg]:max-mobile:size-[1.1rem]", icon.tile)} variant="value">
+        <Icon icon={icon.Glyph} size="lg" />
       </IconTile>
       <h2 className="text-[1.05rem] leading-[1.35] font-[780] tracking-[-0.025em] text-ink max-mobile:text-[0.91rem]">
         {title}
@@ -49,7 +54,7 @@ export function ValuePropositionsSection() {
             <ValueCard
               {...item}
               className={index === 3 ? "border-r-0" : undefined}
-              Icon={icons[index]}
+              icon={icons[index]}
               key={item.title}
             />
           ))}

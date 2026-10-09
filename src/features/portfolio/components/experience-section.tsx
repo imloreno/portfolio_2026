@@ -16,7 +16,7 @@ export function ExperienceSection() {
         />
         <ol
           aria-label="Professional experience, newest first"
-          className="relative grid list-none gap-[1.05rem] p-0 before:absolute before:top-6 before:bottom-6 before:left-[11.1rem] before:w-px before:bg-[#bdcfe4] before:content-[''] max-tablet:before:left-[9.7rem] max-mobile:gap-2.5 max-mobile:before:top-3 max-mobile:before:bottom-4 max-mobile:before:left-1"
+          className="relative grid list-none gap-[1.05rem] p-0 before:absolute before:top-6 before:bottom-6 before:left-[11.1rem] before:w-px before:bg-line before:content-[''] max-tablet:before:left-[9.7rem] max-mobile:gap-2.5 max-mobile:before:top-3 max-mobile:before:bottom-4 max-mobile:before:left-1"
         >
           {experience.map((role, index) => (
             <ExperienceEntry

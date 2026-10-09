@@ -20,7 +20,7 @@ function NavLinks({
     return (
       <a
         aria-current={active ? "location" : undefined}
-        className={`rounded-sm text-sm font-medium no-underline transition-colors motion-reduce:transition-none focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-sky-300 ${mobile ? "min-h-11 py-2.5 text-base" : "border-b border-transparent py-1"} ${active ? "border-sky-300 text-white" : "text-[#d8e4f4] hover:border-[#75a9ff] hover:text-white"}`}
+        className={`rounded-sm text-sm font-medium no-underline transition-colors motion-reduce:transition-none focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-sky-300 ${mobile ? "min-h-11 py-2.5 text-base" : "border-b border-transparent py-1"} ${active ? "border-sky-300 text-white" : "text-ice hover:border-focus hover:text-white"}`}
         href={`#${id}`}
         key={id}
         onClick={onNavigate}
