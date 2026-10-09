@@ -1,5 +1,5 @@
 {
-  "name": "portfolio-temporal-2026",
+  "name": "portfolio-2026",
   "version": "0.1.0",
   "private": true,
   "type": "module",
@@ -12,11 +12,9 @@
     "dev:vinext": "vite dev --port 3001",
     "build:vinext": "vite build",
     "start:vinext": "vite preview",
-    "deploy:vinext": "vinext-cloudflare deploy",
-    "deploy:response-store": "cf deploy --prebuilt --mode production --worker portfolio-temporal-2026-response-store"
+    "deploy:vinext": "vinext-cloudflare deploy"
   },
   "dependencies": {
-    "@cloudflare/workers-response-store": "^1.1.0",
     "@vinext/cloudflare": "^1.1.0",
     "clsx": "^2.1.1",
     "motion": "^14.0.0",
@@ -30,6 +28,7 @@
   "devDependencies": {
     "@cloudflare/vite-plugin": "^2.0.0-beta.sha-52b0dc0e9",
     "@tailwindcss/turbopack": "^4",
+    "@tailwindcss/vite": "^4.3.3",
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",

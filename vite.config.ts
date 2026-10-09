@@ -1,19 +1,19 @@
 import { defineConfig } from "vite";
+import tailwindcss from "@tailwindcss/vite";
 import vinext from "vinext";
 import { cloudflare } from "@cloudflare/vite-plugin";
-import { responseStoreServiceBinding } from "./cloudflare.config";
-import { responseStoreAdapter } from "@vinext/cloudflare/cache/response-store-adapter";
+import { staticAssetsAdapter } from "@vinext/cloudflare/cache/static-assets-adapter";
 import { imagesOptimizer } from "@vinext/cloudflare/images/images-optimizer";
 
 export default defineConfig({
   plugins: [
+    tailwindcss(),
     vinext({
-      cache: responseStoreAdapter(),
+      cache: { cdn: staticAssetsAdapter() },
       prerender: { routes: "*" },
       images: { optimizer: imagesOptimizer() },
     }),
     cloudflare({
-      auxiliaryWorkers: [{ config: responseStoreServiceBinding }],
       viteEnvironment: {
         name: "rsc",
         childEnvironments: ["ssr"],

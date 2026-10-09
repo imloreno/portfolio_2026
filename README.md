@@ -1,4 +1,4 @@
-# portfolio-temporal-2026
+# portfolio-2026
 
 Next.js + TypeScript + Tailwind CSS, using Bun.
 
