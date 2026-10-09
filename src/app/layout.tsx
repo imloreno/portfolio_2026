@@ -1,10 +1,23 @@
 import type { Metadata, Viewport } from "next";
+import { Analytics } from "@/components/analytics";
 import { profileSettings } from "@/features/portfolio/constants/profile";
 import { structuredData } from "@/features/portfolio/structured-data";
 import "./globals.css";
 
 const title = "Lorenzo Arias — Senior Full-Stack Engineer | AI Product Engineering";
 const ogAlt = "Lorenzo Arias, Senior Full-Stack Engineer focused on AI Product Engineering";
+
+// Search-engine verification tokens (public — they appear in the HTML). Set these
+// after adding the site to Google Search Console / Bing Webmaster Tools.
+const googleVerification = process.env.GOOGLE_SITE_VERIFICATION;
+const bingVerification = process.env.BING_SITE_VERIFICATION;
+const verification: Metadata["verification"] | undefined =
+  googleVerification || bingVerification
+    ? {
+        ...(googleVerification ? { google: googleVerification } : {}),
+        ...(bingVerification ? { other: { "msvalidate.01": bingVerification } } : {}),
+      }
+    : undefined;
 
 export const metadata: Metadata = {
   metadataBase: new URL(profileSettings.siteUrl),
@@ -18,6 +31,7 @@ export const metadata: Metadata = {
   creator: profileSettings.name,
   publisher: profileSettings.name,
   category: "technology",
+  ...(verification ? { verification } : {}),
   alternates: { canonical: "/" },
   icons: {
     icon: [
@@ -87,6 +101,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
           }}
         />
         {children}
+        <Analytics />
       </body>
     </html>
   );
