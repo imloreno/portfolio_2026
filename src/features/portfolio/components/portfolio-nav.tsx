@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
 import { ActionLink } from "@/components/ui/action-link";
 import { Container } from "@/components/ui/container";
@@ -47,12 +48,16 @@ export function PortfolioNav() {
       <Container className="flex min-h-[4.5rem] items-center justify-between gap-2 max-mobile:min-h-[4.15rem] max-mobile:gap-2">
         <Link
           aria-label="Lorenzo Arias home"
-          className="inline-flex min-w-0 shrink-0 items-center gap-2 rounded-sm no-underline focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-sky-300 max-mobile:gap-[0.55rem]"
+          className="inline-flex min-w-0 shrink-0 items-center gap-3 rounded-sm no-underline focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-sky-300 max-mobile:gap-[0.55rem]"
           href="/"
         >
-          <span className="inline-grid size-10 shrink-0 place-items-center rounded-[0.35rem] border border-white/20 bg-blue text-[0.88rem] font-bold tracking-[-0.06em] text-white shadow-[0_5px_14px_rgb(0_0_0_/_16%)] max-mobile:size-[2.1rem]">
-            LA
-          </span>
+          <Image
+            alt="Lorenzo Arias logo"
+            className="size-10 shrink-0 rounded-[0.35rem] shadow-[0_5px_14px_rgb(0_0_0_/_16%)] max-mobile:size-[2.1rem] border border-2 border-blue-deep"
+            height={80}
+            src="/icon.webp"
+            width={80}
+          />
           <span className="whitespace-nowrap text-[0.72rem] font-bold tracking-[0.13em] text-white max-mobile:text-[0.63rem] max-mobile:tracking-[0.11em] max-narrow:text-[0.56rem] max-narrow:tracking-[0.08em]">
             LORENZO ARIAS
           </span>

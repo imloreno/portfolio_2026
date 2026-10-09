@@ -11,6 +11,7 @@ export const metadata: Metadata = {
   title: "Lorenzo Arias — Senior Full-Stack Engineer | AI Product Engineering",
   description,
   applicationName: "Lorenzo Arias Portfolio",
+  icons: { icon: "/icon.webp" },
   alternates: { canonical: "/" },
   openGraph: {
     type: "website",
