@@ -99,7 +99,7 @@ export function HeroSection() {
         <div className="relative isolate flex h-full min-h-[470px] items-end justify-center self-end max-tablet:order-2 max-tablet:items-center max-tablet:self-stretch max-tablet:h-auto max-tablet:min-h-0 max-mobile:mx-[-0.55rem] max-mobile:h-[min(100vw,400px)] max-mobile:min-h-0">
           <Image
             alt="Lorenzo Arias, a Senior Full-Stack Engineer based in Bolivia"
-            className="h-auto max-h-[660px] w-[min(100%,630px)] object-contain object-bottom drop-shadow-[0_16px_18px_rgb(7_27_54_/_9%)] tablet:w-[min(120%,630px)] tablet:max-w-none tablet:shrink-0 max-tablet:w-[min(100%,460px)] max-tablet:h-auto max-tablet:max-h-[480px] max-tablet:max-w-full max-mobile:h-full max-mobile:max-h-[400px] max-mobile:w-auto max-mobile:max-w-full"
+            className="h-auto pointer-events-none select-none max-h-[660px] w-[min(100%,630px)] object-contain object-bottom drop-shadow-[0_16px_18px_rgb(7_27_54_/_9%)] tablet:w-[min(120%,630px)] tablet:max-w-none tablet:shrink-0 max-tablet:w-[min(100%,460px)] max-tablet:h-auto max-tablet:max-h-[480px] max-tablet:max-w-full max-mobile:h-full max-mobile:max-h-[400px] max-mobile:w-auto max-mobile:max-w-full"
             height={1254}
             preload
             sizes="(max-width: 680px) 100vw, (max-width: 1100px) 50vw, 640px"
