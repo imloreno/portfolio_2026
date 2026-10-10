@@ -1,5 +1,6 @@
 import type { ReactNode } from "react";
 import { TagList } from "@/components/ui/tag-list";
+import { cn } from "@/utils/cn";
 import { CaseStudyVisual } from "./case-study-visual";
 import type { CaseStudy } from "../types/content";
 
@@ -54,7 +55,7 @@ export function CaseStudyCard({ study, reverse }: { study: CaseStudy; reverse: b
         </CaseDetail>
         <TagList className="mt-5" items={study.stack} label={`${study.title} technologies`} />
       </div>
-      <div className={reverse ? "tablet:order-1" : ""}>
+      <div className={cn("min-w-0", reverse ? "tablet:order-1" : "")}>
         <CaseStudyVisual studyId={study.id} />
       </div>
     </article>

@@ -1,42 +1,44 @@
-import { Icon } from "@/components/ui/icon-tile";
-import {
-  FiArrowRight,
-  FiCpu,
-  FiDatabase,
-  FiMessageSquare,
-} from "react-icons/fi";
+import { MermaidDiagram } from "./mermaid-diagram";
 
-function FlowNode({ title, detail, icon }: { title: string; detail: string; icon: "message" | "cpu" | "data" }) {
-  const Glyph = icon === "message" ? FiMessageSquare : icon === "cpu" ? FiCpu : FiDatabase;
-
-  return (
-    <div className="grid min-h-[118px] content-center gap-2.5 border border-line bg-white/85 p-4 max-wide:min-h-[108px] max-wide:px-2 max-wide:py-3 max-mobile:min-h-[95px] max-mobile:gap-2 max-mobile:px-1.5 max-mobile:py-2">
-      <span className="inline-grid size-8 place-items-center rounded-[0.35rem] bg-blue-deep text-white max-mobile:size-[1.65rem]">
-        <Icon icon={Glyph} className="size-[1.05rem] max-mobile:size-4" />
-      </span>
-      <strong className="text-[0.77rem] leading-[1.3] text-navy max-mobile:text-[0.64rem]">
-        {title}
-      </strong>
-      <span className="text-[0.68rem] leading-[1.4] text-muted max-mobile:text-[0.58rem]">
-        {detail}
-      </span>
-    </div>
-  );
-}
+const ORDER_ASSISTANT_FLOW = `flowchart TD
+    U["User / Doctor"] --> C["coms_module<br/>Receive, parse and normalize input"]
+    C --> M["matter_module<br/>LLM orchestration and intent detection"]
+    M <--> D["decision_system<br/>Conversation state and task context"]
+    M --> V{"Intent clear and<br/>required data available?"}
+    V -- "No" --> R["Request clarification"]
+    R --> C
+    V -- "Yes" --> T["tools_module<br/>Validate and execute tool calls"]
+    T --> A["Authorization and policy checks"]
+    A --> RG["RAG module<br/>Clinical knowledge and prior notes"]
+    A --> DB[("AuroraDB<br/>Application and workflow data")]
+    A --> API["Medical platform API<br/>Patient records and appointments"]
+    RG --> O["Tool results"]
+    DB --> O
+    API --> O
+    O --> M
+    M --> C
+    C --> U
+    A -. "Denied / error" .-> E["Controlled error handling"]
+    E --> M
+    classDef main fill:#0c2a50,stroke:#1769f5,color:#ffffff
+    classDef data fill:#eaf3ff,stroke:#1769f5,color:#071b36
+    classDef control fill:#e9f1f9,stroke:#0754ce,color:#071b36
+    classDef neutral fill:#f8fafd,stroke:#dbe3ec,color:#0a1728
+    class C,M,T main
+    class RG,DB,API data
+    class D,V,A,E control
+    class U,R,O neutral`;
 
 function OrderAssistantVisual() {
   return (
-    <div className="grid gap-4" role="img" aria-label="Illustrative flow from a natural-language request through an AI layer to an order action">
+    <div className="grid min-w-0 grid-cols-[minmax(0,1fr)] gap-4">
       <p className="text-[0.75rem] font-extrabold tracking-[0.12em] text-navy uppercase">
-        Order assistant · system flow
+        Order assistant · architecture flow
       </p>
-      <div className="grid grid-cols-[minmax(0,1fr)_auto_minmax(0,1fr)_auto_minmax(0,1fr)] items-center gap-2 max-wide:gap-1 max-mobile:gap-1">
-        <FlowNode detail="Order intent" icon="message" title="Natural language" />
-        <Icon icon={FiArrowRight} tone="deep" className="size-4 max-mobile:size-3" />
-        <FlowNode detail="LLM · RAG" icon="cpu" title="AI layer" />
-        <Icon icon={FiArrowRight} tone="deep" className="size-4 max-mobile:size-3" />
-        <FlowNode detail="Connected services" icon="data" title="Order action" />
-      </div>
+      <MermaidDiagram
+        chart={ORDER_ASSISTANT_FLOW}
+        label="Order assistant architecture flow from user input through LLM orchestration, tool calls, and connected medical services"
+      />
     </div>
   );
 }
@@ -110,7 +112,7 @@ export function CaseStudyVisual({ studyId }: { studyId: string }) {
 
   return (
     <div
-      className={`relative grid min-h-[480px] content-center overflow-hidden p-[clamp(1.5rem,4vw,3.7rem)] max-wide:min-h-[430px] max-wide:p-7 max-tablet:min-h-[340px] max-mobile:order-1 max-mobile:min-h-[260px] max-mobile:p-5 ${reporting ? "bg-navy-raised text-white" : "bg-blue-pale"}`}
+      className={`relative grid min-h-[480px] min-w-0 grid-cols-[minmax(0,1fr)] content-center overflow-hidden p-[clamp(1.5rem,4vw,3.7rem)] max-wide:min-h-[430px] max-wide:p-7 max-tablet:min-h-[340px] max-mobile:order-1 max-mobile:min-h-[260px] max-mobile:p-5 ${reporting ? "bg-navy-raised text-white" : "bg-blue-pale"}`}
     >
       {content}
       <p className={`mt-6 self-end text-[0.72rem] leading-[1.5] font-semibold text-muted max-mobile:mt-4 max-mobile:text-[0.66rem] ${reporting ? "text-ice" : ""}`}>
